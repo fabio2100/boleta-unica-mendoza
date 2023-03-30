@@ -12,6 +12,12 @@
   background-color: black;
 }
 
+.logo{
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+  border-right: 6px solid black;
+}
+
 
 .leftMargin{
   margin-left: 10px;
