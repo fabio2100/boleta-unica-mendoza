@@ -2,6 +2,10 @@
   background-color:gray;
   color: white;
   font-weight: 900;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .listaCompleta{
@@ -12,5 +16,10 @@
 .leftMargin{
   margin-left: 10px;
   border-left: 10px solid yellowgreen;
+}
+
+.check{
+  width: 50px;
+  height: 50px;
 }
 
