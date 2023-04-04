@@ -28,8 +28,17 @@
 .check{
   width: 50px;
   height: 50px;
-  position: absolute;
-  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  /*position: relative;
+  right: 1%;*/
+}
+
+.checkListaCompleta{
+  display: flex;
+  align-items: end;
+  justify-content: right;
 }
 
 
@@ -73,4 +82,14 @@
 
 .divSenador{
   padding-top: 10px;
+}
+
+.main{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.app{
+  margin-right: 0;
+  margin-left: 0;
 }

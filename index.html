@@ -9,22 +9,25 @@
     <title>Boleta única Mendoza</title>
   </head>
   <body>
-    <div class="main" id="app">
+    <div id="app" class="app">
+      <div class="container">
+        <div class="row">
+    <div v-for="n in 10" class="main col-3">
       <div class="leftMargin logo" id="logo">
-        <div for="">LISTA 001</div>
+        <div for="">LISTA {{n}}</div>
         <div for="" class="logoEscudo">LOGO</div>
         <div for="" class="logoEscudo">ESCUDO</div>
         <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
         <div class="footer listaCompleta">
           <label for="">VOTO</label>
           <label for="">LISTA COMPLETA</label>
-          <input type="checkbox" class="check" name="" id="" />
+          <input type="checkbox" class="check checkListaCompleta" name="" id="" />
         </div>
       </div>
       <div class="leftMargin" id="gobernador">
         <div class="gobernador container">
           <div class="row align-items-center">
-          <div class="col"><img src="img/boss-512.webp" alt="imgGobernador" width="256" height="256"></div>
+          <div class="col"><img src="img/boss-512.webp" alt="imgGobernador" width="128" height="128"></div>
           <div class="col">
             <p class="gobernadorNombre">NOMBRE APELLIDO</p>
             <p class="gobernadorCargo">GOBERNADOR</p>
@@ -36,7 +39,7 @@
         <div class="footer container">
             <div class="row">
               <div class="col-11">VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR</div>
-              <div class="col-1"><input type="checkbox" class="check" name="" id="" /></div>
+              <div class="col-1"><input type="checkbox" class="float-end check" name="" id="" /></div>
             </div>
         </div>
       </div>
@@ -50,7 +53,7 @@
         <div class="footer container">
             <div class="row">
               <div class="col-11">VOTO CANDIDATOS A SENADORES PROVINCIALES</div>
-              <div class="col-1"><input type="checkbox" class="check" name="" id="" /></div>
+              <div class="col-1"><input type="checkbox" class="check float-end" name="" id="" /></div>
             </div>
         </div>
       </div>
@@ -73,7 +76,7 @@
       <div class="leftMargin" id="intendentes">
         <div class="gobernador container">
           <div class="row align-items-center">
-          <div class="col"><img src="img/boss-512.webp" alt="imgGobernador" width="256" height="256"></div>
+          <div class="col"><img src="img/boss-512.webp" alt="imgGobernador" width="128" height="128"></div>
           <div class="col">
             <p class="gobernadorNombre">NOMBRE APELLIDO</p>
             <p class="gobernadorCargo">INTENDENTE</p>
@@ -102,6 +105,12 @@
         </div>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="index.js"></script>
   </body>
