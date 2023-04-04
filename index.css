@@ -50,3 +50,18 @@
   font-weight: 900;
   margin-bottom: 1px;
 }
+
+.senadorPrincipal{
+  font-weight: 900;
+}
+
+.senadorDetalle{
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divSenador{
+  padding-top: 10px;
+}
