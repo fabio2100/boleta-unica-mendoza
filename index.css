@@ -108,3 +108,12 @@
 .footerTexto{
   width: 90%;
 }
+
+.btnSimular{
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: aqua;
+  border-radius: 15px;
+}
+

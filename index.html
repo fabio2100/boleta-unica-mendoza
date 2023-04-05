@@ -4,102 +4,139 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/bcded251a0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    
     <title>Boleta única Mendoza</title>
   </head>
   <body>
     <div id="app" class="app">
       <div class="rowOwn">
-    <div v-for="n in 10" class="main colOwn">
-      <div class="leftMargin logo" id="logo">
-        <div for="">LISTA {{n}}</div>
-        <div for="" class="logoEscudo">LOGO</div>
-        <div for="" class="logoEscudo">ESCUDO</div>
-        <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
-        <div class="footer listaCompleta">
-          <div class="footerTexto">VOTO LISTA COMPLETA</div>
-          <input type="checkbox" class="check" name="" id="" />
-    </div>
-      </div>
-      <div class="leftMargin" id="gobernador">
-        <div class="gobernador container">
-          <div class="row align-items-center">
-          <div class="col"><img src="img/boss-512.webp" alt="imgGobernador" width="128" height="128"></div>
-          <div class="col">
-            <p class="gobernadorNombre">NOMBRE APELLIDO</p>
-            <p class="gobernadorCargo">GOBERNADOR</p>
-            <p class="gobernadorNombre">NOMBRE APELLIDO</p>
-            <p class="gobernadorCargo">VICEGOBERNADOR</p>
-          </div>
-        </div>
-        </div>
-        <div class="footer">
-              <div class="footerTexto">VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR</div>
+
+        <div v-if="1" v-for="n in listasTotalesPaso" class="main colOwn">
+          <div class="leftMargin logo" id="logo">
+            <div for="">LISTA {{n.nombre}}</div>
+            <div for="" class="{{n.clase}}">LOGO</div>
+            <div for="" class="{{n.clase}}">ESCUDO</div>
+            <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
+            <div class="footer listaCompleta">
+              <div class="footerTexto">VOTO LISTA COMPLETA</div>
               <input type="checkbox" class="check" name="" id="" />
-        </div>
-      </div>
-      <div class="leftMargin divSenador" id="senadores">
-        <p class="senadorDetalle senadorPrincipal">1. NOMBRE DOBLE APELLIDO</p>
-        <p class="senadorDetalle">2. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">3. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">4. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">5. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">6. NOMBRE APELLIDO</p>
-        <div class="footer">
-          <div class="footerTexto">VOTO CANDIDATOS A SENADORES PROVINCIALES</div>
-          <input type="checkbox" class="check" name="" id="" />
-    </div>
-      </div>
-      <div class="leftMargin divSenador" id="diputados">
-        <p class="senadorDetalle senadorPrincipal">1. NOMBRE DOBLE APELLIDO</p>
-        <p class="senadorDetalle">2. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">3. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">4. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">5. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">6. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">7. NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">8. NOMBRE APELLIDO</p>
-        <div class="footer">
-          <div class="footerTexto">VOTO CANDIDATOS A DIPUTADOS PROVINCIALES</div>
-          <input type="checkbox" class="check" name="" id="" />
-    </div>
-      </div>
-      <div class="leftMargin" id="intendentes">
-        <div class="gobernador container">
-          <div class="row align-items-center">
-          <div class="col"><img src="img/boss-512.webp" alt="imgGobernador" width="128" height="128"></div>
-          <div class="col">
-            <p class="gobernadorNombre">NOMBRE APELLIDO</p>
-            <p class="gobernadorCargo">INTENDENTE</p>
+            </div>
+          </div>
+          <div class="leftMargin" id="gobernador">
+            <div class="gobernador container">
+              <div class="row align-items-center">
+                <div class="col">
+                  <img
+                    src="img/boss-512.webp"
+                    alt="imgGobernador"
+                    width="128"
+                    height="128"
+                  />
+                </div>
+                <div class="col">
+                  <p class="gobernadorNombre">NOMBRE APELLIDO</p>
+                  <p class="gobernadorCargo">GOBERNADOR</p>
+                  <p class="gobernadorNombre">NOMBRE APELLIDO</p>
+                  <p class="gobernadorCargo">VICEGOBERNADOR</p>
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="footerTexto">
+                VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR
+              </div>
+              <input type="checkbox" class="check" name="" id="" />
+            </div>
+          </div>
+          <div class="leftMargin divSenador" id="senadores">
+            <p class="senadorDetalle senadorPrincipal">
+              1. NOMBRE DOBLE APELLIDO
+            </p>
+            <p class="senadorDetalle">2. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">3. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">4. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">5. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">6. NOMBRE APELLIDO</p>
+            <div class="footer">
+              <div class="footerTexto">
+                VOTO CANDIDATOS A SENADORES PROVINCIALES
+              </div>
+              <input type="checkbox" class="check" name="" id="" />
+            </div>
+          </div>
+          <div class="leftMargin divSenador" id="diputados">
+            <p class="senadorDetalle senadorPrincipal">
+              1. NOMBRE DOBLE APELLIDO
+            </p>
+            <p class="senadorDetalle">2. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">3. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">4. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">5. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">6. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">7. NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">8. NOMBRE APELLIDO</p>
+            <div class="footer">
+              <div class="footerTexto">
+                VOTO CANDIDATOS A DIPUTADOS PROVINCIALES
+              </div>
+              <input type="checkbox" class="check" name="" id="" />
+            </div>
+          </div>
+          <div class="leftMargin" id="intendentes">
+            <div class="gobernador container">
+              <div class="row align-items-center">
+                <div class="col">
+                  <img
+                    src="img/boss-512.webp"
+                    alt="imgGobernador"
+                    width="128"
+                    height="128"
+                  />
+                </div>
+                <div class="col">
+                  <p class="gobernadorNombre">NOMBRE APELLIDO</p>
+                  <p class="gobernadorCargo">INTENDENTE</p>
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="footerTexto">VOTO CANDIDATO A INTENDENTE</div>
+              <input type="checkbox" class="check" name="" id="" />
+            </div>
+          </div>
+          <div class="leftMargin divSenador" id="concejales">
+            <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
+            <p class="senadorDetalle">NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">NOMBRE APELLIDO</p>
+            <p class="senadorDetalle">NOMBRE APELLIDO</p>
+            <div class="footer">
+              <div class="footerTexto">VOTO CANDIDATOS A CONCEJALES</div>
+              <input type="checkbox" class="check" name="" id="" />
+            </div>
           </div>
         </div>
-        </div>
-        <div class="footer">
-          <div class="footerTexto">VOTO CANDIDATO A INTENDENTE</div>
-          <input type="checkbox" class="check" name="" id="" />
-    </div>
-      </div>
-      <div class="leftMargin divSenador" id="concejales">
-        <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
-        <p class="senadorDetalle">NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">NOMBRE APELLIDO</p>
-        <p class="senadorDetalle">NOMBRE APELLIDO</p>
-        <div class="footer">
-          <div class="footerTexto">VOTO CANDIDATOS A CONCEJALES</div>
-          <input type="checkbox" class="check" name="" id="" />
-    </div>
       </div>
     </div>
-  </div>
-  </div>
-
-
+    <span type="button" value="Simular voto" class="btnSimular">
+      Simular voto<i class="fas fa-vote-yea"></i>
+    </span>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="index.js"></script>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"
+  ></script>
 </html>
