@@ -10,19 +10,17 @@
   </head>
   <body>
     <div id="app" class="app">
-      <div class="container">
-        <div class="row">
-    <div v-for="n in 10" class="main col-3">
+      <div class="rowOwn">
+    <div v-for="n in 10" class="main colOwn">
       <div class="leftMargin logo" id="logo">
         <div for="">LISTA {{n}}</div>
         <div for="" class="logoEscudo">LOGO</div>
         <div for="" class="logoEscudo">ESCUDO</div>
         <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
         <div class="footer listaCompleta">
-          <label for="">VOTO</label>
-          <label for="">LISTA COMPLETA</label>
-          <input type="checkbox" class="check checkListaCompleta" name="" id="" />
-        </div>
+          <div class="footerTexto">VOTO LISTA COMPLETA</div>
+          <input type="checkbox" class="check" name="" id="" />
+    </div>
       </div>
       <div class="leftMargin" id="gobernador">
         <div class="gobernador container">
@@ -36,11 +34,9 @@
           </div>
         </div>
         </div>
-        <div class="footer container">
-            <div class="row">
-              <div class="col-11">VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR</div>
-              <div class="col-1"><input type="checkbox" class="float-end check" name="" id="" /></div>
-            </div>
+        <div class="footer">
+              <div class="footerTexto">VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR</div>
+              <input type="checkbox" class="check" name="" id="" />
         </div>
       </div>
       <div class="leftMargin divSenador" id="senadores">
@@ -50,12 +46,10 @@
         <p class="senadorDetalle">4. NOMBRE APELLIDO</p>
         <p class="senadorDetalle">5. NOMBRE APELLIDO</p>
         <p class="senadorDetalle">6. NOMBRE APELLIDO</p>
-        <div class="footer container">
-            <div class="row">
-              <div class="col-11">VOTO CANDIDATOS A SENADORES PROVINCIALES</div>
-              <div class="col-1"><input type="checkbox" class="check float-end" name="" id="" /></div>
-            </div>
-        </div>
+        <div class="footer">
+          <div class="footerTexto">VOTO CANDIDATOS A SENADORES PROVINCIALES</div>
+          <input type="checkbox" class="check" name="" id="" />
+    </div>
       </div>
       <div class="leftMargin divSenador" id="diputados">
         <p class="senadorDetalle senadorPrincipal">1. NOMBRE DOBLE APELLIDO</p>
@@ -66,12 +60,10 @@
         <p class="senadorDetalle">6. NOMBRE APELLIDO</p>
         <p class="senadorDetalle">7. NOMBRE APELLIDO</p>
         <p class="senadorDetalle">8. NOMBRE APELLIDO</p>
-        <div class="footer container">
-            <div class="row">
-              <div class="col-11">VOTO CANDIDATOS A DIPUTADOS PROVINCIALES</div>
-              <div class="col-1"><input type="checkbox" class="check" name="" id="" /></div>
-            </div>
-        </div>
+        <div class="footer">
+          <div class="footerTexto">VOTO CANDIDATOS A DIPUTADOS PROVINCIALES</div>
+          <input type="checkbox" class="check" name="" id="" />
+    </div>
       </div>
       <div class="leftMargin" id="intendentes">
         <div class="gobernador container">
@@ -83,12 +75,10 @@
           </div>
         </div>
         </div>
-        <div class="footer container">
-            <div class="row">
-              <div class="col-11">VOTO CANDIDATO A INTENDENTE</div>
-              <div class="col-1"><input type="checkbox" class="check" name="" id="" /></div>
-            </div>
-        </div>
+        <div class="footer">
+          <div class="footerTexto">VOTO CANDIDATO A INTENDENTE</div>
+          <input type="checkbox" class="check" name="" id="" />
+    </div>
       </div>
       <div class="leftMargin divSenador" id="concejales">
         <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
@@ -97,15 +87,12 @@
         <p class="senadorDetalle">NOMBRE APELLIDO</p>
         <p class="senadorDetalle">NOMBRE APELLIDO</p>
         <p class="senadorDetalle">NOMBRE APELLIDO</p>
-        <div class="footer container">
-            <div class="row">
-              <div class="col-11">VOTO CANDIDATOS A CONCEJALES</div>
-              <div class="col-1"><input type="checkbox" class="check" name="" id="" /></div>
-            </div>
-        </div>
+        <div class="footer">
+          <div class="footerTexto">VOTO CANDIDATOS A CONCEJALES</div>
+          <input type="checkbox" class="check" name="" id="" />
+    </div>
       </div>
     </div>
-  </div>
   </div>
   </div>
 
