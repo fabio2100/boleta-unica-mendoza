@@ -27,7 +27,7 @@
             <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
             <div class="footer listaCompleta">
               <div class="footerTexto">VOTO LISTA COMPLETA</div>
-              <input type="checkbox" class="check" name="" id="" />
+              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesListaCompleta"/>
             </div>
           </div>
           <div class="" id="gobernador">
@@ -53,7 +53,7 @@
               <div class="footerTexto">
                 VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR
               </div>
-              <input type="checkbox" class="check" name="" id="" />
+              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesGobernador"/>
             </div>
           </div>
           <div class=" divSenador" id="senadores">
@@ -69,7 +69,7 @@
               <div class="footerTexto">
                 VOTO CANDIDATOS A SENADORES PROVINCIALES
               </div>
-              <input type="checkbox" class="check" name="" id="" />
+              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesSenadores"/>
             </div>
           </div>
           <div class=" divSenador" id="diputados">
@@ -87,7 +87,7 @@
               <div class="footerTexto">
                 VOTO CANDIDATOS A DIPUTADOS PROVINCIALES
               </div>
-              <input type="checkbox" class="check" name="" id="" />
+              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesDiputados"/>
             </div>
           </div>
           <div class="" id="intendentes">
@@ -109,7 +109,7 @@
             </div>
             <div class="footer">
               <div class="footerTexto">VOTO CANDIDATO A INTENDENTE</div>
-              <input type="checkbox" class="check" name="" id="" />
+              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesIntendente"/>
             </div>
           </div>
           <div class=" divSenador" id="concejales">
@@ -121,16 +121,15 @@
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
             <div class="footer">
               <div class="footerTexto">VOTO CANDIDATOS A CONCEJALES</div>
-              <input type="checkbox" class="check" name="" id="" />
+              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesConcejales"/>
             </div>
           </div>
         </div>
       </div>
+      <button type="button" value="Simular voto" class="btnSimular" @click="emitirVoto">
+        Simular voto<i class="fas fa-vote-yea"></i>
+      </button>
     </div>
-    <span type="button" value="Simular voto" class="btnSimular">
-      Simular voto<i class="fas fa-vote-yea"></i>
-    </span>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="index.js"></script>
   </body>

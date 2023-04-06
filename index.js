@@ -1,6 +1,12 @@
 new Vue({
   el: "#app",
   data: {
+    checkedValuesListaCompleta : [],
+    checkedValuesGobernador: [],
+    checkedValuesSenadores: [],
+    checkedValuesDiputados: [],
+    checkedValuesIntendente: [],
+    checkedValuesConcejales: [],
     listasTotalesPaso: [
       { nombre: "1A", clase: "uno", claseBorde: "unoBorde" },
       { nombre: "1B", clase: "uno", claseBorde: "unoBorde" },
@@ -15,4 +21,16 @@ new Vue({
     ],
     listasTotales: ["1", "2", "3", "4", "5"],
   },
+  methods: {
+    emitirVoto : function(event){
+      console.log({event});
+      console.log(this.checkedValuesListaCompleta);
+      console.log(this.checkedValuesGobernador);
+      console.log(this.checkedValuesSenadores);
+      console.log(this.checkedValuesDiputados);
+      console.log(this.checkedValuesIntendente);
+      console.log(this.checkedValuesConcejales);
+      
+    }
+  }
 });
