@@ -15,15 +15,10 @@
 }
 
 .logo{
-  border-top: 6px solid black;
-  border-bottom: 6px solid black;
-  border-right: 6px solid black;
+  border: 6px solid black;
 }
 
 
-.leftMargin{
-  border-left: 10px solid yellowgreen;
-}
 
 .check{
   width: 50px;
@@ -36,14 +31,13 @@
 }
 
 .checkListaCompleta{
-  
   justify-content: flex-end !important;
 }
 
 
 
 
-.logoEscudo{
+.uno{
   color: yellowgreen;
   font-weight: 900;
   font-size: 54px;
@@ -52,10 +46,53 @@
   display: flex;
   justify-content: center;
 }
+.dos{
+  color: blueviolet;
+  font-weight: 900;
+  font-size: 54px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+.tres{
+  color: yellow;
+  font-weight: 900;
+  font-size: 54px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+.cuatro{
+  color: red;
+  font-weight: 900;
+  font-size: 54px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.unoBorde{
+  border-left: 10px solid yellowgreen;
+}
+
+.dosBorde{
+  border-left: 10px solid blueviolet;
+}
+
+.tresBorde{
+  border-left: 10px solid yellow;
+}
+
+.cuatroBorde{
+  border-left: 10px solid red;
+}
 
 .frente{
   font-weight: 900;
-  font-size: 24px;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,7 +150,15 @@
   position: fixed;
   bottom: 15px;
   right: 15px;
-  background-color: aqua;
+  background-color: #2222BB;
   border-radius: 15px;
+  color: silver;
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 

@@ -19,18 +19,18 @@
     <div id="app" class="app">
       <div class="rowOwn">
 
-        <div v-if="1" v-for="n in listasTotalesPaso" class="main colOwn">
-          <div class="leftMargin logo" id="logo">
+        <div v-if="1" v-for="n in listasTotalesPaso" class="main colOwn" :class="n.claseBorde">
+          <div class=" logo" id="logo">
             <div for="">LISTA {{n.nombre}}</div>
-            <div for="" class="{{n.clase}}">LOGO</div>
-            <div for="" class="{{n.clase}}">ESCUDO</div>
+            <div for="" :class="n.clase">LOGO</div>
+            <div for="" :class="n.clase">ESCUDO</div>
             <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
             <div class="footer listaCompleta">
               <div class="footerTexto">VOTO LISTA COMPLETA</div>
               <input type="checkbox" class="check" name="" id="" />
             </div>
           </div>
-          <div class="leftMargin" id="gobernador">
+          <div class="" id="gobernador">
             <div class="gobernador container">
               <div class="row align-items-center">
                 <div class="col">
@@ -56,7 +56,7 @@
               <input type="checkbox" class="check" name="" id="" />
             </div>
           </div>
-          <div class="leftMargin divSenador" id="senadores">
+          <div class=" divSenador" id="senadores">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -72,7 +72,7 @@
               <input type="checkbox" class="check" name="" id="" />
             </div>
           </div>
-          <div class="leftMargin divSenador" id="diputados">
+          <div class=" divSenador" id="diputados">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -90,7 +90,7 @@
               <input type="checkbox" class="check" name="" id="" />
             </div>
           </div>
-          <div class="leftMargin" id="intendentes">
+          <div class="" id="intendentes">
             <div class="gobernador container">
               <div class="row align-items-center">
                 <div class="col">
@@ -112,7 +112,7 @@
               <input type="checkbox" class="check" name="" id="" />
             </div>
           </div>
-          <div class="leftMargin divSenador" id="concejales">
+          <div class=" divSenador" id="concejales">
             <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
