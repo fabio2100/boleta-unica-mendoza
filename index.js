@@ -31,6 +31,21 @@ new Vue({
       console.log(this.checkedValuesIntendente);
       console.log(this.checkedValuesConcejales);
       
+
+      var listaCompleta = this.checkedValuesListaCompleta;
+      var gobernadores = this.checkedValuesGobernador;
+      var senadores = this.checkedValuesSenadores;
+      var diputados = this.checkedValuesDiputados;
+      var intedentes = this.checkedValuesIntendente;
+      var concejales = this.checkedValuesConcejales;
+
+      if(listaCompleta.length > 1){
+        console.log('Voto completo anulado')
+      }else if(listaCompleta.length == 1){
+        console.log('voto una lista completa, ver que no haya nulos por categorias')
+      }else{
+        console.log('No hay votod de lista completa')
+      }
     }
   }
 });
