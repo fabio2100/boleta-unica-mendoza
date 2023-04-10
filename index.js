@@ -39,13 +39,36 @@ new Vue({
       var intedentes = this.checkedValuesIntendente;
       var concejales = this.checkedValuesConcejales;
 
-      if(listaCompleta.length > 1){
+      var sizeListaCompleta = listaCompleta.length;
+      var sizeGobernador = gobernadores.length;
+      var sizeSenadores = senadores.length;
+      var sizeDiputados = diputados.length;
+      var sizeIntendentes = intedentes.length;
+      var sizeConcejales = concejales.length; 
+
+      var votoGobernador = 0;
+      var votoSenadores = 0;
+      var votoDiputados = 0;
+      var votoIntendente = 0;
+      var votoConcejales = 0;
+      
+
+
+      if(sizeListaCompleta > 1){
         console.log('Voto completo anulado')
       }else if(listaCompleta.length == 1){
-        console.log('voto una lista completa, ver que no haya nulos por categorias')
+        console.log('voto una lista completa, ver que no haya nulos por categorias');
+        votoGobernador ++;
+        votoSenadores ++;
+        votoDiputados ++;
+        votoIntendente ++;
+        votoConcejales ++;
+        
       }else{
         console.log('No hay votod de lista completa')
       }
+
+
     }
   }
 });
