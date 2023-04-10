@@ -57,16 +57,16 @@ new Vue({
       if(sizeListaCompleta > 1){
         console.log('Voto completo anulado')
       }else if(listaCompleta.length == 1){
-        console.log('voto una lista completa, ver que no haya nulos por categorias');
         votoGobernador ++;
         votoSenadores ++;
         votoDiputados ++;
         votoIntendente ++;
-        votoConcejales ++;
-        
+        votoConcejales ++;  
       }else{
         console.log('No hay votod de lista completa')
       }
+
+      
 
 
     }
