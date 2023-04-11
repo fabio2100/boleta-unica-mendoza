@@ -161,4 +161,19 @@
   justify-content: center;
 }
 
+.btnLimpiar{
+  position: fixed;
+  bottom: 70px;
+  right: 15px;
+  background-color: #2222BB;
+  border-radius: 15px;
+  color: silver;
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
