@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/bcded251a0.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/bcded251a0.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="index.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
@@ -12,22 +15,64 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
-    
+
     <title>Boleta única Mendoza</title>
+    <script type="text/x-template" id="modal-template">
+      <transition name="modal">
+        <div class="modal-mask modal-open">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+
+              <div class="modal-header">
+                <slot name="header">
+                  default header
+                </slot>
+              </div>
+
+              <div class="modal-body">
+                <slot name="body">
+                  default body
+                </slot>
+              </div>
+
+              <div class="modal-footer">
+                <slot name="footer">
+                  default footer
+                  <button class="modal-default-button" @click="$emit('close')">
+                    OK
+                  </button>
+                </slot>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </script>
   </head>
   <body>
     <div id="app" class="app">
       <div class="rowOwn">
-
-        <div v-if="1" v-for="n in listasTotalesPaso" class="main colOwn" :class="n.claseBorde">
-          <div class=" logo" id="logo">
+        <div
+          v-if="1"
+          v-for="n in listasTotalesPaso"
+          class="main colOwn"
+          :class="n.claseBorde"
+        >
+          <div class="logo" id="logo">
             <div for="">LISTA {{n.nombre}}</div>
             <div for="" :class="n.clase">LOGO</div>
             <div for="" :class="n.clase">ESCUDO</div>
             <div for="" class="frente">PARTIDO,FRENTE O ALIANZA</div>
             <div class="footer listaCompleta">
               <div class="footerTexto">VOTO LISTA COMPLETA</div>
-              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesListaCompleta"/>
+              <input
+                type="checkbox"
+                class="check"
+                name=""
+                id=""
+                :value="n"
+                v-model="checkedValuesListaCompleta"
+              />
             </div>
           </div>
           <div class="" id="gobernador">
@@ -53,10 +98,17 @@
               <div class="footerTexto">
                 VOTO CANDIDATOS A GOBERNADOR Y VICEGOBERNADOR
               </div>
-              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesGobernador"/>
+              <input
+                type="checkbox"
+                class="check"
+                name=""
+                id=""
+                :value="n"
+                v-model="checkedValuesGobernador"
+              />
             </div>
           </div>
-          <div class=" divSenador" id="senadores">
+          <div class="divSenador" id="senadores">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -69,10 +121,17 @@
               <div class="footerTexto">
                 VOTO CANDIDATOS A SENADORES PROVINCIALES
               </div>
-              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesSenadores"/>
+              <input
+                type="checkbox"
+                class="check"
+                name=""
+                id=""
+                :value="n"
+                v-model="checkedValuesSenadores"
+              />
             </div>
           </div>
-          <div class=" divSenador" id="diputados">
+          <div class="divSenador" id="diputados">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -87,7 +146,14 @@
               <div class="footerTexto">
                 VOTO CANDIDATOS A DIPUTADOS PROVINCIALES
               </div>
-              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesDiputados"/>
+              <input
+                type="checkbox"
+                class="check"
+                name=""
+                id=""
+                :value="n"
+                v-model="checkedValuesDiputados"
+              />
             </div>
           </div>
           <div class="" id="intendentes">
@@ -109,10 +175,17 @@
             </div>
             <div class="footer">
               <div class="footerTexto">VOTO CANDIDATO A INTENDENTE</div>
-              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesIntendente"/>
+              <input
+                type="checkbox"
+                class="check"
+                name=""
+                id=""
+                :value="n"
+                v-model="checkedValuesIntendente"
+              />
             </div>
           </div>
-          <div class=" divSenador" id="concejales">
+          <div class="divSenador" id="concejales">
             <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
@@ -121,17 +194,93 @@
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
             <div class="footer">
               <div class="footerTexto">VOTO CANDIDATOS A CONCEJALES</div>
-              <input type="checkbox" class="check" name="" id="" :value="n.nombre" v-model="checkedValuesConcejales"/>
+              <input
+                type="checkbox"
+                class="check"
+                name=""
+                id=""
+                :value="n"
+                v-model="checkedValuesConcejales"
+              />
             </div>
           </div>
         </div>
       </div>
-      <button type="button" value="Simular voto" class="btnSimular" @click="emitirVoto">
+      <button
+        type="button"
+        value="Simular voto"
+        class="btnSimular"
+        @click="emitirVoto"
+      >
         Simular voto<i class="fas fa-vote-yea"></i>
       </button>
       <button type="button" value="Simular voto" class="btnLimpiar" @click="limpiar">
         Limpiar<i class="fas fa-redo"></i>
       </button>
+      <modal
+        v-if="showModal"
+        @close="showModal = false"
+        class="modal-open"
+      >
+        <h3 slot="header">Hubieras votado:</h3>
+        <h1 slot="body">
+          <p>Gobernador</p>
+          <div v-if="votoGobernador > 1" class="nulo">
+            Voto nulo
+          </div>
+          <div v-else-if="votoGobernador == 0" class="enBlanco">
+            Voto en blanco
+          </div>
+          <div v-else>
+            Voto válido
+          </div>
+          <p>Senadores</p>
+          <div v-if="votoSenadores > 1" class="nulo">
+            Voto nulo
+          </div>
+          <div v-else-if="votoSenadores == 0" class="enBlanco">
+            Voto en blanco
+          </div>
+          <div v-else>
+            Voto válido
+          </div>
+          
+          <p>Diputados</p>
+          <div v-if="votoDiputados > 1" class="nulo">
+            Voto nulo
+          </div>
+          <div v-else-if="votoDiputados == 0" class="enBlanco">
+            Voto en blanco
+          </div>
+          <div v-else>
+            Voto válido
+          </div>
+          
+          <p>Intendente</p>
+          <div v-if="votoIntendente > 1" class="nulo">
+            Voto nulo
+          </div>
+          <div v-else-if="votoIntendente == 0" class="enBlanco">
+            Voto en blanco
+          </div>
+          <div v-else>
+            Voto válido
+          </div>         
+          <p>Concejales</p>
+          <div v-if="votoConcejales > 1" class="nulo">
+            Voto nulo
+          </div>
+          <div v-else-if="votoConcejales == 0" class="enBlanco">
+            Voto en blanco
+          </div>
+          <div v-else>
+            Voto válido
+          </div>
+          
+          <p>{{checkedValuesGobernador}}</p>
+          <p>{{checkedValuesSenadores}}</p>
+        </h1>
+      </modal>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="index.js"></script>

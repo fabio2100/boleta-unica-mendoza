@@ -1,12 +1,23 @@
+Vue.component("modal", {
+  template: "#modal-template",
+  props : ['votoGobernador','votoSenadores','votoDiputados','votoIntendente','votoConcejales']
+});
+
 new Vue({
   el: "#app",
   data: {
+    showModal : false,
     checkedValuesListaCompleta : [],
     checkedValuesGobernador: [],
     checkedValuesSenadores: [],
     checkedValuesDiputados: [],
     checkedValuesIntendente: [],
     checkedValuesConcejales: [],
+    votoGobernador : 0,
+    votoSenadores : 0,
+    votoDiputados : 0,
+    votoIntendente : 0,
+    votoConcejales : 0,
     listasTotalesPaso: [
       { nombre: "1A", clase: "uno", claseBorde: "unoBorde" },
       { nombre: "1B", clase: "uno", claseBorde: "unoBorde" },
@@ -23,6 +34,11 @@ new Vue({
   },
   methods: {
     emitirVoto : function(event){
+      this.votoGobernador = 0
+      this.votoSenadores = 0
+      this.votoDiputados = 0
+      this.votoIntendente = 0
+      this.votoConcejales = 0
       console.log(this.checkedValuesListaCompleta);
       console.log(this.checkedValuesGobernador);
       console.log(this.checkedValuesSenadores);
@@ -44,76 +60,71 @@ new Vue({
       var sizeDiputados = diputados.length;
       var sizeIntendentes = intedentes.length;
       var sizeConcejales = concejales.length; 
-
-      var votoGobernador = 0;
-      var votoSenadores = 0;
-      var votoDiputados = 0;
-      var votoIntendente = 0;
-      var votoConcejales = 0;
       
 
 
       if(sizeListaCompleta > 1){
         console.log('Voto completo anulado')
-        votoGobernador = 2;
-        votoSenadores = 2;
-        votoDiputados = 2;
-        votoIntendente = 2;
-        votoConcejales = 2;
+        this.votoGobernador = 2;
+        this.votoSenadores = 2;
+        this.votoDiputados = 2;
+        this.votoIntendente = 2;
+        this.votoConcejales = 2;
       }else if(listaCompleta.length == 1){
-        votoGobernador ++;
-        votoSenadores ++;
-        votoDiputados ++;
-        votoIntendente ++;
-        votoConcejales ++;
-        if(sizeGobernador > 0)  votoGobernador++
-        if(sizeSenadores > 0)  votoSenadores++
-        if(sizeDiputados > 0)  votoDiputados++
-        if(sizeIntendentes > 0)  votoIntendente++
-        if(sizeConcejales > 0)  votoConcejales++
+        this.votoGobernador ++;
+        this.votoSenadores ++;
+        this.votoDiputados ++;
+        this.votoIntendente ++;
+        this.votoConcejales ++;
+        if(sizeGobernador > 0)  this.votoGobernador++
+        if(sizeSenadores > 0)  this.votoSenadores++
+        if(sizeDiputados > 0)  this.votoDiputados++
+        if(sizeIntendentes > 0)  this.votoIntendente++
+        if(sizeConcejales > 0)  this.votoConcejales++
       }else{
         console.log('No hay votod de lista completa')
         if(sizeGobernador==1){
-          votoGobernador++;
+          this.votoGobernador++;
         }else if(sizeGobernador>1){
-          votoGobernador=2;
+          this.votoGobernador=2;
         }
 
         if(sizeSenadores==1){
-          votoSenadores++;
+          this.votoSenadores++;
         }else if(sizeSenadores>1){
-          votoSenadores=2;
+          this.votoSenadores=2;
         }
 
         if(sizeDiputados==1){
-          votoDiputados++;
+          this.votoDiputados++;
         }else if(sizeDiputados>1){
-          votoDiputados=2;
+          this.votoDiputados=2;
         }
 
         if(sizeIntendentes==1){
-          votoIntendente++;
+          this.votoIntendente++;
         }else if(sizeIntendentes>1){
-          votoIntendente=2;
+          this.votoIntendente=2;
         }
 
         if(sizeConcejales==1){
-          votoConcejales++;
+          this.votoConcejales++;
         }else if(sizeConcejales>1){
-          votoConcejales=2;
+          this.votoConcejales=2;
         }
       }
 
 
-      console.log({votoGobernador})
-      console.log({votoSenadores})
-      console.log({votoDiputados})
-      console.log({votoIntendente})
-      console.log({votoConcejales})
+      console.log(this.votoGobernador)
+      console.log(this.votoSenadores)
+      console.log(this.votoDiputados)
+      console.log(this.votoIntendente)
+      console.log(this.votoConcejales)
+
+      this.showModal = true;
     },
 
     limpiar : function(event){
-      console.log('pouladl')
       this.checkedValuesListaCompleta = '';
       this.checkedValuesGobernador = '';
       this.checkedValuesSenadore = '';
