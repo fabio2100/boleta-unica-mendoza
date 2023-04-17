@@ -156,6 +156,16 @@
   width: 360px;
 }
 
+.colIndicadora{
+  float: left;
+  width: 100px;
+}
+
+.rotateCol{
+  border: 2px solid black;
+}
+
+
 .footerTexto{
   width: 90%;
 }
