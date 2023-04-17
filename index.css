@@ -76,26 +76,32 @@
 
 .unoBorde{
   border-left: 10px solid yellowgreen;
+  display: inline;
 }
 
 .dosBorde{
   border-left: 10px solid blueviolet;
+  display: inline;
 }
 
 .tresBorde{
   border-left: 10px solid yellow;
+  display: inline;
 }
 
 .cuatroBorde{
   border-left: 10px solid red;
+  display: inline;
 }
 
 .nulo{
   border-left: 10px solid black;
+  display: inline;
 }
 
 .enBlanco{
   border-left: 10px solid silver;
+  display: inline;
 }
 
 .frente{
@@ -269,3 +275,9 @@
   transform: scale(1.2);
 }
 
+
+.resultado{
+  border: 2px solid black;
+  margin-bottom: 6px;
+  text-align: center;
+}
