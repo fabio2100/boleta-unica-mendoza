@@ -39,14 +39,7 @@ new Vue({
       this.votoDiputados = 0
       this.votoIntendente = 0
       this.votoConcejales = 0
-      console.log(this.checkedValuesListaCompleta);
-      console.log(this.checkedValuesGobernador);
-      console.log(this.checkedValuesSenadores);
-      console.log(this.checkedValuesDiputados);
-      console.log(this.checkedValuesIntendente);
-      console.log(this.checkedValuesConcejales);
       
-
       var listaCompleta = this.checkedValuesListaCompleta;
       var gobernadores = this.checkedValuesGobernador;
       var senadores = this.checkedValuesSenadores;
@@ -64,7 +57,6 @@ new Vue({
 
 
       if(sizeListaCompleta > 1){
-        console.log('Voto completo anulado')
         this.votoGobernador = 2;
         this.votoSenadores = 2;
         this.votoDiputados = 2;
@@ -82,7 +74,6 @@ new Vue({
         if(sizeIntendentes > 0)  this.votoIntendente++
         if(sizeConcejales > 0)  this.votoConcejales++
       }else{
-        console.log('No hay votod de lista completa')
         if(sizeGobernador==1){
           this.votoGobernador++;
         }else if(sizeGobernador>1){
@@ -114,12 +105,6 @@ new Vue({
         }
       }
 
-
-      console.log(this.votoGobernador)
-      console.log(this.votoSenadores)
-      console.log(this.votoDiputados)
-      console.log(this.votoIntendente)
-      console.log(this.votoConcejales)
 
       this.showModal = true;
     },

@@ -37,9 +37,8 @@
 
               <div class="modal-footer">
                 <slot name="footer">
-                  default footer
                   <button class="modal-default-button" @click="$emit('close')">
-                    OK
+                    Cerrar
                   </button>
                 </slot>
               </div>
@@ -231,8 +230,11 @@
           <div v-else-if="votoGobernador == 0" class="enBlanco">
             Voto en blanco
           </div>
-          <div v-else>
-            Voto válido
+          <div v-else >
+            <div v-if="checkedValuesListaCompleta.length" :class="checkedValuesListaCompleta[0].claseBorde">
+              {{checkedValuesListaCompleta[0].nombre}}
+            </div>
+            <div v-else :class="checkedValuesGobernador[0].claseBorde">{{checkedValuesGobernador[0].nombre}}</div>
           </div>
           <p>Senadores</p>
           <div v-if="votoSenadores > 1" class="nulo">
@@ -241,8 +243,11 @@
           <div v-else-if="votoSenadores == 0" class="enBlanco">
             Voto en blanco
           </div>
-          <div v-else>
-            Voto válido
+          <div v-else >
+            <div v-if="checkedValuesListaCompleta.length" :class="checkedValuesListaCompleta[0].claseBorde">
+              {{checkedValuesListaCompleta[0].nombre}}
+            </div>
+            <div v-else :class="checkedValuesSenadores[0].claseBorde">{{checkedValuesSenadores[0].nombre}}</div>
           </div>
           
           <p>Diputados</p>
@@ -252,8 +257,11 @@
           <div v-else-if="votoDiputados == 0" class="enBlanco">
             Voto en blanco
           </div>
-          <div v-else>
-            Voto válido
+          <div v-else >
+            <div v-if="checkedValuesListaCompleta.length" :class="checkedValuesListaCompleta[0].claseBorde">
+              {{checkedValuesListaCompleta[0].nombre}}
+            </div>
+            <div v-else :class="checkedValuesDiputados[0].claseBorde">{{checkedValuesDiputados[0].nombre}}</div>
           </div>
           
           <p>Intendente</p>
@@ -263,9 +271,12 @@
           <div v-else-if="votoIntendente == 0" class="enBlanco">
             Voto en blanco
           </div>
-          <div v-else>
-            Voto válido
-          </div>         
+          <div v-else >
+            <div v-if="checkedValuesListaCompleta.length" :class="checkedValuesListaCompleta[0].claseBorde">
+              {{checkedValuesListaCompleta[0].nombre}}
+            </div>
+            <div v-else :class="checkedValuesIntendente[0].claseBorde">{{checkedValuesIntendente[0].nombre}}</div>
+          </div>       
           <p>Concejales</p>
           <div v-if="votoConcejales > 1" class="nulo">
             Voto nulo
@@ -273,12 +284,12 @@
           <div v-else-if="votoConcejales == 0" class="enBlanco">
             Voto en blanco
           </div>
-          <div v-else>
-            Voto válido
+          <div v-else >
+            <div v-if="checkedValuesListaCompleta.length" :class="checkedValuesListaCompleta[0].claseBorde">
+              {{checkedValuesListaCompleta[0].nombre}}
+            </div>
+            <div v-else :class="checkedValuesConcejales[0].claseBorde">{{checkedValuesConcejales[0].nombre}}</div>
           </div>
-          
-          <p>{{checkedValuesGobernador}}</p>
-          <p>{{checkedValuesSenadores}}</p>
         </h1>
       </modal>
     </div>
