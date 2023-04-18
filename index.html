@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
     <script
       src="https://kit.fontawesome.com/bcded251a0.js"
       crossorigin="anonymous"
@@ -50,6 +50,10 @@
   </head>
   <body>
     <div id="app" class="app">
+      <select name="eleccion" id="eleccion" v-model="tipoEleccion" @change="changeSelect()">
+        <option value="paso">PASO</option>
+        <option value="general">GENERALES</option>
+      </select>
       <div class="rowOwn">
         <div class="columnaIndicadora">
           <div class="textoIndicador altoListaCompleta">LISTA COMPLETA</div>
@@ -60,10 +64,10 @@
           <div class="textoIndicador altoConcejales">CONCEJALES</div>
         </div>
         <div
-          v-if="1"
           v-for="n in listasTotalesPaso"
           class="main colOwn"
           :class="n.claseBorde"
+          v-if="n.tipoEleccion==tipoEleccion"
         >
           <div class="logo altoListaCompleta" id="logo">
             <div for="">LISTA {{n.nombre}}</div>
