@@ -51,13 +51,13 @@
   <body>
     <div id="app" class="app">
       <div class="rowOwn">
-        <div class="colIndicadora">
-          <div class="rotateCol">Lista Completa</div>
-          <div class="rotateCol">Gobernador</div>
-          <div class="rotateCol">Senadores</div>
-          <div class="rotateCol">Diputados</div>
-          <div class="rotateCol">Intendente</div>
-          <div class="rotateCol">Concejales</div>
+        <div class="columnaIndicadora">
+          <div class="textoIndicador altoListaCompleta">LISTA COMPLETA</div>
+          <div class="textoIndicador altoGobernador">GOBERNADOR</div>
+          <div class="textoIndicador altoSenador">SENADORES</div>
+          <div class="textoIndicador altoDiputados">DIPUTADOS</div>
+          <div class="textoIndicador altoIntendente">INTENDENTE</div>
+          <div class="textoIndicador altoConcejales">CONCEJALES</div>
         </div>
         <div
           v-if="1"
@@ -65,7 +65,7 @@
           class="main colOwn"
           :class="n.claseBorde"
         >
-          <div class="logo" id="logo">
+          <div class="logo altoListaCompleta" id="logo">
             <div for="">LISTA {{n.nombre}}</div>
             <div for="" :class="n.clase">LOGO</div>
             <div for="" :class="n.clase">ESCUDO</div>
@@ -82,7 +82,7 @@
               />
             </div>
           </div>
-          <div class="" id="gobernador">
+          <div class="altoGobernador" id="gobernador">
             <div class="gobernador container">
               <div class="row align-items-center">
                 <div class="col">
@@ -115,7 +115,7 @@
               />
             </div>
           </div>
-          <div class="divSenador" id="senadores">
+          <div class="divSenador altoSenador" id="senadores">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -138,7 +138,7 @@
               />
             </div>
           </div>
-          <div class="divSenador" id="diputados">
+          <div class="divSenador altoDiputados" id="diputados">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -163,7 +163,7 @@
               />
             </div>
           </div>
-          <div class="" id="intendentes">
+          <div class="altoIntendente" id="intendentes">
             <div class="gobernador container">
               <div class="row align-items-center">
                 <div class="col">
@@ -192,7 +192,7 @@
               />
             </div>
           </div>
-          <div class="divSenador" id="concejales">
+          <div class="divSenador altoConcejales" id="concejales">
             <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
@@ -233,7 +233,7 @@
         <h3 slot="header">Hubieras votado:</h3>
         <h1 slot="body">
           <div class="resultado">
-            <p>Gobernador</p>
+            <p class="textoModalCategoria">Gobernador</p>
             <div v-if="votoGobernador > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoGobernador == 0" class="enBlanco">
               Voto en blanco
@@ -246,12 +246,12 @@
                 LISTA {{checkedValuesListaCompleta[0].nombre}}
               </div>
               <div v-else :class="checkedValuesGobernador[0].claseBorde">
-               LISTA {{checkedValuesGobernador[0].nombre}}
+                LISTA {{checkedValuesGobernador[0].nombre}}
               </div>
             </div>
           </div>
           <div class="resultado">
-            <p>Senadores</p>
+            <p class="textoModalCategoria">Senadores</p>
             <div v-if="votoSenadores > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoSenadores == 0" class="enBlanco">
               Voto en blanco
@@ -269,7 +269,7 @@
             </div>
           </div>
           <div class="resultado">
-            <p>Diputados</p>
+            <p class="textoModalCategoria">Diputados</p>
             <div v-if="votoDiputados > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoDiputados == 0" class="enBlanco">
               Voto en blanco
@@ -282,12 +282,12 @@
                 LISTA {{checkedValuesListaCompleta[0].nombre}}
               </div>
               <div v-else :class="checkedValuesDiputados[0].claseBorde">
-               LISTA {{checkedValuesDiputados[0].nombre}}
+                LISTA {{checkedValuesDiputados[0].nombre}}
               </div>
             </div>
           </div>
           <div class="resultado">
-            <p>Intendente</p>
+            <p class="textoModalCategoria">Intendente</p>
             <div v-if="votoIntendente > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoIntendente == 0" class="enBlanco">
               Voto en blanco
@@ -300,13 +300,13 @@
                 LISTA {{checkedValuesListaCompleta[0].nombre}}
               </div>
               <div v-else :class="checkedValuesIntendente[0].claseBorde">
-               LISTA {{checkedValuesIntendente[0].nombre}}
+                LISTA {{checkedValuesIntendente[0].nombre}}
               </div>
             </div>
           </div>
 
           <div class="resultado">
-            <p>Concejales</p>
+            <p class="textoModalCategoria">Concejales</p>
             <div v-if="votoConcejales > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoConcejales == 0" class="enBlanco">
               Voto en blanco
@@ -316,10 +316,10 @@
                 v-if="checkedValuesListaCompleta.length"
                 :class="checkedValuesListaCompleta[0].claseBorde"
               >
-               LISTA {{checkedValuesListaCompleta[0].nombre}}
+                LISTA {{checkedValuesListaCompleta[0].nombre}}
               </div>
               <div v-else :class="checkedValuesConcejales[0].claseBorde">
-               LISTA {{checkedValuesConcejales[0].nombre}}
+                LISTA {{checkedValuesConcejales[0].nombre}}
               </div>
             </div>
           </div>

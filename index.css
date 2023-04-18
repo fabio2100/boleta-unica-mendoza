@@ -291,3 +291,55 @@
   margin-bottom: 6px;
   text-align: center;
 }
+
+
+.categorias{
+  width: 80px !important;
+}
+
+
+.altoListaCompleta{
+  height: 280px;
+}
+
+.altoGobernador{
+  height: 248px;
+}
+
+.altoDiputados{
+  height: 300px;
+
+}
+
+.altoSenador{
+  height: 240px;
+}
+
+.altoIntendente{
+  height: 200px;
+}
+
+.altoConcejales{
+
+    height: 244px;
+}
+
+.columnaIndicadora{
+  float: left;
+}
+
+.textoIndicador{
+  width: 80px;
+  font-weight: 900;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+  border-left: 6px solid black;
+  writing-mode: vertical-lr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textoModalCategoria{
+  font-weight: 600;
+}
