@@ -166,6 +166,7 @@
 }
 
 
+
 .footerTexto{
   width: 90%;
 }
@@ -178,8 +179,8 @@
   border-radius: 15px;
   color: silver;
   font-size: 18px;
-  width: 12em;
-  height: 3em;
+  width: 15em;
+  height: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,14 +188,14 @@
 
 .btnLimpiar{
   position: fixed;
-  bottom: 80px;
+  bottom: 100px;
   right: 15px;
   background-color: #2222BB;
   border-radius: 15px;
   color: silver;
   font-size: 18px;
-  width: 12em;
-  height: 3em;
+  width: 15em;
+  height: 4em;
   display: flex;
   align-items: center;
   justify-content: center;

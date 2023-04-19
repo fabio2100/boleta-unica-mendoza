@@ -12,7 +12,10 @@ Vue.component("modal", {
 new Vue({
   el: "#app",
   data: {
+    fecha: '30 de Abril',
     tipoEleccion: 'paso',
+    tipoDepartamento: 'municipal',
+    tipoDepto: 'siete',
     showModal: false,
     checkedValuesListaCompleta: [],
     checkedValuesGobernador: [],
@@ -137,9 +140,48 @@ new Vue({
       this.checkedValuesIntendente = [];
       this.checkedValuesConcejales = [];
     },
-    changeSelect: function(event){
-      console.log(this.tipoEleccion);
+    actualizarFecha: function(){
+      if(this.tipoDepto==='siete' && this.tipoEleccion==='paso' && this.tipoDepartamento==='municipal'){
+        this.fecha= '30 de Abril';
+      }
+      if(this.tipoDepto==='siete' && this.tipoEleccion==='paso' && this.tipoDepartamento==='provincial'){
+        this.fecha= '11 de Junio';
+      }
+      if(this.tipoDepto==='siete' && this.tipoEleccion==='general' && this.tipoDepartamento==='municipal'){
+        this.fecha= '3 de Septiembre';
+      }
+      if(this.tipoDepto==='siete' && this.tipoEleccion==='general' && this.tipoDepartamento==='provincial'){
+        this.fecha= '24 de Septiembre';
+      }
+      if(this.tipoDepto==='doce' && this.tipoEleccion==='paso' && this.tipoDepartamento==='municipal'){
+        this.fecha= 'IMPOSIBLE';
+      }
+      if(this.tipoDepto==='doce' && this.tipoEleccion==='paso' && this.tipoDepartamento==='provincial'){
+        this.fecha= '11 de Junio';
+      }
+      if(this.tipoDepto==='doce' && this.tipoEleccion==='general' && this.tipoDepartamento==='municipal'){
+        this.fecha= 'IMPOSIBLE';
+      }
+      if(this.tipoDepto==='doce' && this.tipoEleccion==='general' && this.tipoDepartamento==='provincial'){
+        this.fecha= '24 de Septiembre';
+      }
+    },
+    changeTipoEleccion: function(event){
       this.limpiar();
+      this.actualizarFecha();
+    },
+    changeTipoDepartamento: function(event){
+      this.limpiar();
+      this.actualizarFecha();
+    },
+    changeTipoDepto: function(event){
+      if(this.tipoDepto==='doce'){
+        this.tipoDepartamento='provincial';
+      }else if(this.tipoDepto==='siete'){
+        this.tipoDepartamento='municipal';
+      }
+      this.limpiar();
+      this.actualizarFecha();
     }
   },
 });

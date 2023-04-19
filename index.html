@@ -50,10 +50,19 @@
   </head>
   <body>
     <div id="app" class="app">
-      <select name="eleccion" id="eleccion" v-model="tipoEleccion" @change="changeSelect()">
+      <select name="" id="departamento" v-model='tipoDepto' @change="changeTipoDepto()">
+        <option value="siete">Santa Rosa, San Rafael, Tunuyán, Lavalle, Maipú, La Paz o San Carlos</option>
+        <option value="doce">Resto de departamentos</option>
+      </select>
+      <select name="eleccion" id="eleccion" v-model="tipoEleccion" @change="changeTipoEleccion()">
         <option value="paso">PASO</option>
         <option value="general">GENERALES</option>
       </select>
+      <select name="tipoDepartamento" v-if="tipoDepto==='siete'" v-model="tipoDepartamento" id="tipoDepartamento" @change="changeTipoDepartamento()">
+        <option value="municipal">Municipales</option>
+        <option value="provincial">Provinciales</option>
+      </select>
+      <h1>FECHA {{fecha}}</h1>
       <div class="rowOwn">
         <div class="columnaIndicadora">
           <div class="textoIndicador altoListaCompleta">LISTA COMPLETA</div>
