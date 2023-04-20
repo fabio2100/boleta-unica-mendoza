@@ -17,6 +17,8 @@ new Vue({
     tipoDepartamento: 'municipal',
     tipoDepto: 'siete',
     showModal: false,
+    muestraGobernador: false,
+    muestraIntendente: true,
     checkedValuesListaCompleta: [],
     checkedValuesGobernador: [],
     checkedValuesSenadores: [],
@@ -143,27 +145,43 @@ new Vue({
     actualizarFecha: function(){
       if(this.tipoDepto==='siete' && this.tipoEleccion==='paso' && this.tipoDepartamento==='municipal'){
         this.fecha= '30 de Abril';
+        this.muestraGobernador=false;
+        this.muestraIntendente=true;
       }
       if(this.tipoDepto==='siete' && this.tipoEleccion==='paso' && this.tipoDepartamento==='provincial'){
         this.fecha= '11 de Junio';
+        this.muestraGobernador=true;
+        this.muestraIntendente=false;
       }
       if(this.tipoDepto==='siete' && this.tipoEleccion==='general' && this.tipoDepartamento==='municipal'){
         this.fecha= '3 de Septiembre';
+        this.muestraGobernador=false;
+        this.muestraIntendente=true;
       }
       if(this.tipoDepto==='siete' && this.tipoEleccion==='general' && this.tipoDepartamento==='provincial'){
         this.fecha= '24 de Septiembre';
+        this.muestraGobernador=true;
+        this.muestraIntendente=false;
       }
       if(this.tipoDepto==='doce' && this.tipoEleccion==='paso' && this.tipoDepartamento==='municipal'){
         this.fecha= 'IMPOSIBLE';
+        this.muestraGobernador=false;
+        this.muestraIntendente=false;
       }
       if(this.tipoDepto==='doce' && this.tipoEleccion==='paso' && this.tipoDepartamento==='provincial'){
         this.fecha= '11 de Junio';
+        this.muestraGobernador=true;
+        this.muestraIntendente=true;
       }
       if(this.tipoDepto==='doce' && this.tipoEleccion==='general' && this.tipoDepartamento==='municipal'){
         this.fecha= 'IMPOSIBLE';
+        this.muestraGobernador=false;
+        this.muestraIntendente=false;
       }
       if(this.tipoDepto==='doce' && this.tipoEleccion==='general' && this.tipoDepartamento==='provincial'){
         this.fecha= '24 de Septiembre';
+        this.muestraGobernador=true;
+        this.muestraIntendente=true;
       }
     },
     changeTipoEleccion: function(event){

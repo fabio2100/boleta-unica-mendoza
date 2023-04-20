@@ -66,11 +66,11 @@
       <div class="rowOwn">
         <div class="columnaIndicadora">
           <div class="textoIndicador altoListaCompleta">LISTA COMPLETA</div>
-          <div class="textoIndicador altoGobernador">GOBERNADOR</div>
-          <div class="textoIndicador altoSenador">SENADORES</div>
-          <div class="textoIndicador altoDiputados">DIPUTADOS</div>
-          <div class="textoIndicador altoIntendente">INTENDENTE</div>
-          <div class="textoIndicador altoConcejales">CONCEJALES</div>
+          <div v-if="muestraGobernador"class="textoIndicador altoGobernador">GOBERNADOR</div>
+          <div v-if="muestraGobernador"class="textoIndicador altoSenador">SENADORES</div>
+          <div v-if="muestraGobernador"class="textoIndicador altoDiputados">DIPUTADOS</div>
+          <div v-if="muestraIntendente"class="textoIndicador altoIntendente">INTENDENTE</div>
+          <div v-if="muestraIntendente"class="textoIndicador altoConcejales">CONCEJALES</div>
         </div>
         <div
           v-for="n in listasTotalesPaso"
@@ -95,7 +95,7 @@
               />
             </div>
           </div>
-          <div class="altoGobernador" id="gobernador">
+          <div class="altoGobernador" id="gobernador" v-if="muestraGobernador">
             <div class="gobernador container">
               <div class="row align-items-center">
                 <div class="col">
@@ -128,7 +128,7 @@
               />
             </div>
           </div>
-          <div class="divSenador altoSenador" id="senadores">
+          <div class="divSenador altoSenador" id="senadores" v-if="muestraGobernador">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -151,7 +151,7 @@
               />
             </div>
           </div>
-          <div class="divSenador altoDiputados" id="diputados">
+          <div class="divSenador altoDiputados" id="diputados" v-if="muestraGobernador">
             <p class="senadorDetalle senadorPrincipal">
               1. NOMBRE DOBLE APELLIDO
             </p>
@@ -176,7 +176,7 @@
               />
             </div>
           </div>
-          <div class="altoIntendente" id="intendentes">
+          <div class="altoIntendente" id="intendentes" v-if="muestraIntendente">
             <div class="gobernador container">
               <div class="row align-items-center">
                 <div class="col">
@@ -205,7 +205,7 @@
               />
             </div>
           </div>
-          <div class="divSenador altoConcejales" id="concejales">
+          <div class="divSenador altoConcejales" id="concejales" v-if="muestraIntendente">
             <p class="senadorDetalle senadorPrincipal">NOMBRE DOBLE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
             <p class="senadorDetalle">NOMBRE APELLIDO</p>
