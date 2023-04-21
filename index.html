@@ -50,19 +50,30 @@
   </head>
   <body>
     <div id="app" class="app">
-      <select name="" id="departamento" v-model='tipoDepto' @change="changeTipoDepto()">
+      <div class="selectContainer">
+       <div> 
+        <label for="departamento" class="labelTipoDepto">Departamento</label>
+      <select class="selectDeptos selectStyle" name="" id="departamento" v-model='tipoDepto' @change="changeTipoDepto()">
         <option value="siete">Santa Rosa, San Rafael, Tunuyán, Lavalle, Maipú, La Paz o San Carlos</option>
         <option value="doce">Resto de departamentos</option>
       </select>
-      <select name="eleccion" id="eleccion" v-model="tipoEleccion" @change="changeTipoEleccion()">
+    </div>
+    <div>
+      <label for="tipo" class="labelTipoDepto">Elección</label>
+      <select class="select selectStyle" name="eleccion" id="eleccion" v-model="tipoEleccion" @change="changeTipoEleccion()">
         <option value="paso">PASO</option>
         <option value="general">GENERALES</option>
       </select>
-      <select name="tipoDepartamento" v-if="tipoDepto==='siete'" v-model="tipoDepartamento" id="tipoDepartamento" @change="changeTipoDepartamento()">
+    </div>
+    <div v-if="tipoDepto==='siete'">
+      <label for="tipo" class="labelTipoDepto">Tipo</label>
+      <select class="select selectStyle" name="tipoDepartamento"  v-model="tipoDepartamento" id="tipoDepartamento" @change="changeTipoDepartamento()">
         <option value="municipal">Municipales</option>
         <option value="provincial">Provinciales</option>
       </select>
-      <h1>FECHA {{fecha}}</h1>
+    </div>
+    </div>
+      <h1 class="fecha">FECHA {{fecha}}</h1>
       <div class="rowOwn">
         <div class="columnaIndicadora">
           <div class="textoIndicador altoListaCompleta">LISTA COMPLETA</div>
@@ -245,7 +256,7 @@
       <modal v-if="showModal" @close="showModal = false" class="modal-open">
         <h3 slot="header">Hubieras votado:</h3>
         <h1 slot="body">
-          <div class="resultado">
+          <div class="resultado" v-if="muestraGobernador">
             <p class="textoModalCategoria">Gobernador</p>
             <div v-if="votoGobernador > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoGobernador == 0" class="enBlanco">
@@ -263,7 +274,7 @@
               </div>
             </div>
           </div>
-          <div class="resultado">
+          <div class="resultado" v-if="muestraGobernador">
             <p class="textoModalCategoria">Senadores</p>
             <div v-if="votoSenadores > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoSenadores == 0" class="enBlanco">
@@ -281,7 +292,7 @@
               </div>
             </div>
           </div>
-          <div class="resultado">
+          <div class="resultado" v-if="muestraGobernador">
             <p class="textoModalCategoria">Diputados</p>
             <div v-if="votoDiputados > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoDiputados == 0" class="enBlanco">
@@ -299,7 +310,7 @@
               </div>
             </div>
           </div>
-          <div class="resultado">
+          <div class="resultado" v-if="muestraIntendente">
             <p class="textoModalCategoria">Intendente</p>
             <div v-if="votoIntendente > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoIntendente == 0" class="enBlanco">
@@ -318,7 +329,7 @@
             </div>
           </div>
 
-          <div class="resultado">
+          <div class="resultado" v-if="muestraIntendente">
             <p class="textoModalCategoria">Concejales</p>
             <div v-if="votoConcejales > 1" class="nulo">Voto nulo</div>
             <div v-else-if="votoConcejales == 0" class="enBlanco">
